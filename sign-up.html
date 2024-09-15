@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+   
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>SignUp Form</title>
+
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(450deg, #f7f5f0, #b2845d); 
+
+}
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color:  #ffff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  margin-top: auto;
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+
+}
+.container header  {
+  font-size: 1.5rem;
+  color:#171d1a;
+  font-weight: 500;
+  text-align: center;
+
+  
+}
+.container h5  {
+  font-size: 1.5rem;
+  color:#171d1a;
+  font-weight: 500;
+  text-align: center;
+  font-size: medium;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: grad;
+ 
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .user-details .select-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+form .select-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .select-box select{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #b2845d;
+}
+
+.user-details .select-box select:focus,
+.user-details .select-box select:valid{
+  border-color: #b2845d;
+}
+
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+  font-size: 16px !important;
+  font-family: 'Tajawal' !important;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+  background: #b2845d;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(115deg, #f7f5f0, #b2845d); 
+   font-size: 16px !important;
+   font-family: 'Tajawal' !important;
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-115deg, #f7f5f0, #b2845d); 
+
+  }
+  .child , .optional{
+    font-size: 12px;
+    color: red;
+    font-size: 16px !important;
+    font-family: 'Tajawal' !important;
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 16px !important;
+    font-family: 'Tajawal' !important;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+     </style>
+   </head>
+<body>
+  <div class="container">
+    <div class="title">
+    
+      <header>نموذج تسجيل طلاب المجمعات والدور والروضات</header>
+      <h5>يرجى ملء كافة البيانات المطلوبة</h5>
+    </div>
+   
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+         
+          <div class="input-box">
+            <span class="details">اسم الطالب/ة الرباعي</span>
+            <input type="text" placeholder="أدخل اسمك الرباعي " required>
+          </div>
+          <div class="input-box">
+            <span class="details">رقم الهوية </span>
+            <input type="number" placeholder="أدخل رقم هويتك" required>
+          </div>
+          <div class="input-box">
+            <span class="details">رقم الجوال</span>
+            <input type="number" placeholder="أدخل رقم جوالك " required>
+          </div>
+          
+          <div class="input-box">
+            <span class="details">البريد الالكتروني 
+              <span class="optional"> (اختياري)</span>
+            </span>
+            <input type="email" placeholder="أدخل بريدك الالكتروني "  >
+          </div>
+
+          <div class="input-box">
+            <label>تاريخ الميلاد</label>
+            <input type="date" placeholder="أدخل تاريخ ميلادك" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details">اسم ولي الامر </span>
+            <input type="text" placeholder="أدخل اسم ولي الامر" required>
+          </div>
+          <div class="input-box">
+            <span class="details">جوال ولي الامر </span>
+            <input type="number" placeholder="أدخل جوال ولي الامر" required>
+          </div>
+
+          <div class="select-box">
+            <span class="details">المرحلة الدراسية</span>
+            <select  class="details">
+             <option>اختيار</option>
+            <option>الروضة</option>
+              <option >الابتدائية</option>
+              <option>المتوسطة</option>
+              <option>الثانوية</option>
+              <option>الجامعية</option>
+              <option>الدراسات العليا</option>
+            </select>
+          </div>
+
+          <div class="select-box">
+            <span class="details">حي السكن </span>
+            <select  class="details">
+             <option>اختيار</option>
+             <option value="1">حطين</option>
+             <option value="2">سنام</option>
+             <option value="3">الروضة</option>
+             <option value="4">الدوحة</option>
+             <option value="5">الحاجب</option>
+             <option value="6">الرمال</option>
+             <option value="7">الحفيرة</option>
+             <option value="8">الصفا</option>
+             <option value="9">الملك خالد</option>
+             <option value="10">الملك فهد</option>
+             <option value="11">الرياضى</option>
+             <option value="12">القيروان</option>
+             <option value="13">غرناطة</option>
+             <option value="14">قرطبة</option>
+             <option value="15">العقيق</option>
+             <option value="16">الشفاء</option>
+             <option value="17">المطار</option>
+             <option value="18">السليمانية</option>
+             <option value="19">الوسطى</option>
+             <option value="20">المنطقة الصناعية الثانية</option>
+             <option value="21">المنطقة الصناعية الاولى</option>
+             <option value="22">الخليج</option>
+             <option value="23">المستودعات</option>
+             <option value="24">الهداء</option>
+             <option value="25">الصالحية</option>
+             <option value="26">المنتزة</option>
+             <option value="27">اليرموك</option>
+             <option value="28">النسيم</option>
+             <option value="29">الرحمانية</option>
+             <option value="30">دمشية</option>
+             <option value="31">المحمدية</option>
+             <option value="32">العبسة</option>
+             <option value="33">بدر</option>
+             <option value="34">الوهلان</option>
+             <option value="35">مليحة</option>
+             <option value="36">مربيدة</option>
+             <option value="37">العليا</option>
+             <option value="38">وسط المدينة</option>
+             <option value="39">الريان</option>
+             <option value="40">الفاخرية</option>
+             <option value="41">النقيلية</option>
+             <option value="42">السحيمية</option>
+             <option value="43">البديعة</option>
+             <option value="44">السلام</option>
+             <option value="45">اشبيلية</option>
+             <option value="46">العونية</option>
+             <option value="47">الحمراء</option>
+             <option value="48">الفيحاء</option>
+             <option value="49">الجامعي</option>
+             <option value="50">المروج</option>
+             <option value="51">اليمامة</option>
+             <option value="52">القادسية</option>
+             <option value="53">المنار</option>
+             <option value="54">الاشرفية</option>
+             <option value="55">الخزامى</option>
+             <option value="56">الروغاني</option>
+             <option value="57">الزهراء</option>
+             <option value="58">الصفراء</option>
+             <option value="59">المباركية</option>
+             <option value="60">المدوية</option>
+             <option value="61">اليرموك</option>
+             <option value="62">النظيم</option>
+             <option value="63">التحلية</option>
+             <option value="64">الجزيرة</option>
+             <option value="65">البستان</option>
+             <option value="66">الوفاء</option>
+             <option value="67">الزاهر</option>
+             <option value="68">الواحة</option>
+             <option value="69">سوق الماشية</option>
+             <option value="70">الجلده</option>
+             <option value="71">الندى</option>
+             <option value="72">ربوة الحاجب</option>
+             <option value="73">الغضا</option>
+             <option value="74">الشعيب</option>
+             <option value="75">البويطن</option>
+             <option value="76">النرجس</option>
+             <option value="77">عكاظ</option>
+             <option value="78">النفود</option>
+             <option value="79">الوادي</option>
+             <option value="80">القصور</option>
+             <option value="81">الحديقة</option>
+             <option value="82">المصيف</option>
+             <option value="83">الجوهرة</option>
+             <option value="84">الثقافة</option>
+             <option value="85">المروة</option>
+             <option value="86">الفخامة</option>
+             <option value="87">الفيصلية</option>
+             <option value="88">الزغيبة</option>
+             <option value="89">الاسكان</option>
+             <option value="90">الحزم</option>
+             <option value="91">خارج عنيزة</option>
+             <option value="92">الشريمية</option>
+             <option value="93">الجوهرة</option>
+             <option value="94">المربع الذهبي</option>
+             <option value="95">النخيل</option>
+             <option value="96">جادة الجمل</option>
+             <option value="97">الغنامية</option>
+             <option value="98">الودي</option>
+             <option value="99">شرق الأشرفية</option>
+             <option value="100">النزهة</option>
+             <option value="101">الياسمين</option>
+             <option value="102">الفرسان</option>
+             <option value="103">الضليعة</option>
+             <option value="104">العروبة</option>
+             <option value="105">شيخه</option>
+             <option value="106">القدس</option>
+             <option value="107">سمحه</option>
+             <option value="108">هلاله</option>
+             <option value="109">الفايزية</option>
+             <option value="110">ابن عيد</option>
+             <option value="112">خارج المملكة</option>
+             <option value="113">الجهيمية</option>
+             
+            </select>
+          </div>
+
+          <div class="select-box">
+            <span class="details">اختيار الفرع الاقرب لك </span>
+            <select  class="details">
+             <option>اختيار</option>
+             <option value="4">مجمع عتبة بن غزوان ( حي الريَّان )</option>
+             <option value="5">مجمع عمر بن الخطاب ( حي الملك خالد )</option>
+             <option value="6">مجمع سعيد بن زيد ( حي  الفيحاء )</option>
+             <option value="7">مجمع مصعب بن عمير ( حي العليا )</option>
+             <option value="8">مجمع الزبير بن العوام ( حي الفهد )</option>
+             <option value="10">مجمع زيد بن ثابت ( حي الفاخرية )</option>
+             <option value="11">مجمع أسامة بن زيد ( حي السليمانية )</option>
+             <option value="12">مجمع عثمان بن عفان ( حي الأشرفية )</option>
+             <option value="45">مجمع جامع المصيريعي ( شرق الأشرفية )</option>
+             <option value="51">مجمع أبي بن كعب ( المحمدية )</option>
+            </select>
+          </div>
+
+        </div>
+
+    
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">الجنس 
+            <span class="child"> *للتسجيل بالروضة يرجى اختيار ((طفل))</span>
+          </span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">ذكر (المجمعات)</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">أنثى (الدور)</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">طفل (روضه)</span>
+          </label>
+        
+          </div>
+
+            <!--  الخريطة -->
+            <div class="col-md-8" style="text-align: center">
+              <div class="form-group">
+                  <label for="exampleInputEmail1">خريطة الفروع التابعة للجمعية</label>
+                  <div class="embed-responsive embed-responsive-16by9">
+                
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.3670136652386!2d43.96345712552598!3d26.086935595091422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1581edea5030d2e7%3A0xc45f76576937df9c!2z2KfZhNis2YXYudmK2Kkg2KfZhNiu2YrYsdmK2Kkg2YTYqtit2YHZiti4INin2YTZgtix2KLZhiDYp9mE2YPYsdmK2YUg2KjYudmG2YrYstip!5e0!3m2!1sar!2ssa!4v1726230795645!5m2!1sar!2ssa" 
+                      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+              </div>
+          </div>
+
+        </div>
+        <div class="button">
+          <input type="submit" value="ارسال">
+        </div>
+
+        <div class="button">
+          <a href="home.html"  >  <input type="submit" value="رجوع "> </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+
+
+</body>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+
+
+
+      $(".datehijri").on('dp.change', function (arg) {
+
+          if (!arg.date) {
+              $("#selected-date").html('');
+              return;
+          };
+
+          let date = arg.date;
+          $(".dobm").val(date.format("YYYY-M-D"));
+          $(".dobh").val(date.format("iYYYY-iM-iD"));
+      });
+
+
+      $("#gender").change(function(){
+          var gender = $("#gender").val();
+          if(gender == "ذكر"){
+                  gender = 1;
+              $("#category_id").show("hide");
+              $("#category_id_second").hide("slow");
+              
+              $("#houses").show("slow");
+              $("#doors").hide("slow");
+              $("#rodat").hide("slow");
+              
+          }
+          else if(gender == "طفل"){
+              gender = 3;
+              $("#category_id").hide("hide");
+              $("#category_id_second").show("slow");
+              
+              $("#houses").hide("slow");
+              $("#doors").hide("slow");
+              $("#rodat").show("slow");
+          }else{
+              gender = 2;
+              $("#category_id").show("hide");
+              $("#category_id_second").hide("slow");
+              
+              $("#houses").hide("slow");
+              $("#doors").show("slow");
+              $("#rodat").hide("slow");
+          }
+          
+          console.log(gender);
+      });
+      
+
+
+
+      
+      
+      /* Show/Hide Levels Regard to Manhaj */
+      $(".chooseclass5").click(function () {
+
+          document.getElementById('class_id').value = document.getElementById('class_id5').value;
+          document.getElementById("tahfeeth1-2-3-4").style.display = "none";
+          document.getElementById("tahfeeth5").style.display = "inline";
+
+      });
+      $(".chooseclass1").click(function () {
+
+          document.getElementById('class_id').value = document.getElementById('class_id1').value;
+          document.getElementById("tahfeeth1-2-3-4").style.display = "inline";
+          document.getElementById("tahfeeth5").style.display = "none";
+
+      });
+      $(".chooseclass2").click(function () {
+
+          document.getElementById('class_id').value = document.getElementById('class_id2').value;
+          document.getElementById("tahfeeth1-2-3-4").style.display = "inline";
+          document.getElementById("tahfeeth5").style.display = "none";
+
+      });
+
+
+      /* Change Levels */
+      $(document).on('change', '#level_quran_save_1', function (e) {
+
+          document.getElementById('class_id').value = 11;
+          document.getElementById('section_id').value = $('#level_quran_save_1').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_1').val();
+
+
+
+          document.getElementById("manhaj-1").style.display = "inline";
+          document.getElementById("manhaj-2").style.display = "none";
+          document.getElementById("manhaj-3").style.display = "none";
+          document.getElementById("manhaj-4").style.display = "none";
+
+          document.getElementById('level_quran_save_2').selectedIndex = 0;
+          document.getElementById('level_quran_save_3').selectedIndex = 0;
+          document.getElementById('level_quran_save_4').selectedIndex = 0;
+          //$('#section_id').html("");
+          //var class_id = $(this).val();
+         // getSectionByClass(class_id, 0);
+      });
+      $(document).on('change', '#level_quran_save_2', function (e) {
+          //$('#manhaj-1').html("");
+
+          document.getElementById('class_id').value = 22;
+          document.getElementById('section_id').value = $('#level_quran_save_2').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_2').val();
+
+          document.getElementById("manhaj-1").style.display = "none";
+          document.getElementById("manhaj-2").style.display = "inline";
+          document.getElementById("manhaj-3").style.display = "none";
+          document.getElementById("manhaj-4").style.display = "none";
+
+          document.getElementById('level_quran_save_1').selectedIndex = 0;
+          document.getElementById('level_quran_save_3').selectedIndex = 0;
+          document.getElementById('level_quran_save_4').selectedIndex = 0;
+
+          //$('#section_id').html("");
+          //var class_id = $(this).val();
+          // getSectionByClass(class_id, 0);
+      });
+      $(document).on('change', '#level_quran_save_3', function (e) {
+          //$('#manhaj-1').html("");
+
+          document.getElementById('class_id').value = 23;
+          document.getElementById('section_id').value = $('#level_quran_save_3').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_3').val();
+
+          document.getElementById("manhaj-1").style.display = "none";
+          document.getElementById("manhaj-2").style.display = "none";
+          document.getElementById("manhaj-3").style.display = "inline";
+          document.getElementById("manhaj-4").style.display = "none";
+
+          document.getElementById('level_quran_save_1').selectedIndex = 0;
+          document.getElementById('level_quran_save_2').selectedIndex = 0;
+          document.getElementById('level_quran_save_4').selectedIndex = 0;
+          //$('#section_id').html("");
+          //var class_id = $(this).val();
+          // getSectionByClass(class_id, 0);
+      });
+      $(document).on('change', '#level_quran_save_4', function (e) {
+          //$('#manhaj-1').html("");
+
+          document.getElementById('class_id').value = 24;
+          document.getElementById('section_id').value = $('#level_quran_save_4').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_4').val();
+
+          document.getElementById("manhaj-1").style.display = "none";
+          document.getElementById("manhaj-2").style.display = "none";
+          document.getElementById("manhaj-3").style.display = "none";
+          document.getElementById("manhaj-4").style.display = "inline";
+
+          document.getElementById('level_quran_save_1').selectedIndex = 0;
+          document.getElementById('level_quran_save_2').selectedIndex = 0;
+          document.getElementById('level_quran_save_3').selectedIndex = 0;
+
+          //$('#section_id').html("");
+          //var class_id = $(this).val();
+          // getSectionByClass(class_id, 0);
+      });
+      $(document).on('change', '#level_quran_save_5_1', function (e) {
+          //$('#manhaj-1').html("");
+
+          document.getElementById('class_id').value = 25;
+          document.getElementById('section_id').value = $('#level_quran_save_5_1').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_5_1').val();
+
+          document.getElementById("manhaj-5_1").style.display = "inline";
+          document.getElementById("manhaj-5_2").style.display = "none";
+          document.getElementById("manhaj-5_3").style.display = "none";
+          document.getElementById("manhaj-5_4").style.display = "none";
+          document.getElementById("manhaj-5_5").style.display = "none";
+          document.getElementById("manhaj-5_6").style.display = "none";
+          document.getElementById("manhaj-5_7").style.display = "none";
+          document.getElementById("manhaj-5_8").style.display = "none";
+          document.getElementById("manhaj-5_9").style.display = "none";
+
+          document.getElementById('level_quran_save_5_2').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_3').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_4').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_5').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_6').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_7').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_8').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_9').selectedIndex = 0;
+      });
+      $(document).on('change', '#level_quran_save_5_2', function (e) {
+
+          document.getElementById('class_id').value = 25;
+          document.getElementById('section_id').value = $('#level_quran_save_5_2').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_5_2').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_5_2').val();
+
+          document.getElementById("manhaj-5_1").style.display = "none";
+          document.getElementById("manhaj-5_2").style.display = "inline";
+          document.getElementById("manhaj-5_3").style.display = "none";
+          document.getElementById("manhaj-5_4").style.display = "none";
+          document.getElementById("manhaj-5_5").style.display = "none";
+          document.getElementById("manhaj-5_6").style.display = "none";
+          document.getElementById("manhaj-5_7").style.display = "none";
+          document.getElementById("manhaj-5_8").style.display = "none";
+          document.getElementById("manhaj-5_9").style.display = "none";
+
+          document.getElementById('level_quran_save_5_1').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_3').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_4').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_5').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_6').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_7').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_8').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_9').selectedIndex = 0;
+      });
+      $(document).on('change', '#level_quran_save_5_3', function (e) {
+          //$('#manhaj-1').html("");
+
+          document.getElementById('class_id').value = 25;
+          document.getElementById('section_id').value = $('#level_quran_save_5_3').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_5_3').val();
+
+          document.getElementById("manhaj-5_1").style.display = "none";
+          document.getElementById("manhaj-5_2").style.display = "none";
+          document.getElementById("manhaj-5_3").style.display = "inline";
+          document.getElementById("manhaj-5_4").style.display = "none";
+          document.getElementById("manhaj-5_5").style.display = "none";
+          document.getElementById("manhaj-5_6").style.display = "none";
+          document.getElementById("manhaj-5_7").style.display = "none";
+          document.getElementById("manhaj-5_8").style.display = "none";
+          document.getElementById("manhaj-5_9").style.display = "none";
+
+          document.getElementById('level_quran_save_5_1').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_2').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_4').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_5').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_6').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_7').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_8').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_9').selectedIndex = 0;
+      });
+      $(document).on('change', '#level_quran_save_5_4', function (e) {
+          //$('#manhaj-1').html("");
+
+          document.getElementById('class_id').value = 25;
+          document.getElementById('section_id').value = $('#level_quran_save_5_4').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_5_4').val();
+
+          document.getElementById("manhaj-5_1").style.display = "none";
+          document.getElementById("manhaj-5_2").style.display = "none";
+          document.getElementById("manhaj-5_3").style.display = "none";
+          document.getElementById("manhaj-5_4").style.display = "inline";
+          document.getElementById("manhaj-5_5").style.display = "none";
+          document.getElementById("manhaj-5_6").style.display = "none";
+          document.getElementById("manhaj-5_7").style.display = "none";
+          document.getElementById("manhaj-5_8").style.display = "none";
+          document.getElementById("manhaj-5_9").style.display = "none";
+
+          document.getElementById('level_quran_save_5_1').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_2').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_3').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_5').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_6').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_7').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_8').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_9').selectedIndex = 0;
+      });
+      $(document).on('change', '#level_quran_save_5_5', function (e) {
+          //$('#manhaj-1').html("");
+
+          document.getElementById('class_id').value = 25;
+          document.getElementById('section_id').value = $('#level_quran_save_5_5').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_5_5').val();
+
+          document.getElementById("manhaj-5_1").style.display = "none";
+          document.getElementById("manhaj-5_2").style.display = "none";
+          document.getElementById("manhaj-5_3").style.display = "none";
+          document.getElementById("manhaj-5_4").style.display = "none";
+          document.getElementById("manhaj-5_5").style.display = "inline";
+          document.getElementById("manhaj-5_6").style.display = "none";
+          document.getElementById("manhaj-5_7").style.display = "none";
+          document.getElementById("manhaj-5_8").style.display = "none";
+          document.getElementById("manhaj-5_9").style.display = "none";
+
+          document.getElementById('level_quran_save_5_1').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_2').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_3').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_4').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_6').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_7').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_8').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_9').selectedIndex = 0;
+      });
+      $(document).on('change', '#level_quran_save_5_6', function (e) {
+          //$('#manhaj-1').html("");
+
+          document.getElementById('class_id').value = 25;
+          document.getElementById('section_id').value = $('#level_quran_save_5_6').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_5_6').val();
+
+          document.getElementById("manhaj-5_1").style.display = "none";
+          document.getElementById("manhaj-5_2").style.display = "none";
+          document.getElementById("manhaj-5_3").style.display = "none";
+          document.getElementById("manhaj-5_4").style.display = "none";
+          document.getElementById("manhaj-5_5").style.display = "none";
+          document.getElementById("manhaj-5_6").style.display = "inline";
+          document.getElementById("manhaj-5_7").style.display = "none";
+          document.getElementById("manhaj-5_8").style.display = "none";
+          document.getElementById("manhaj-5_9").style.display = "none";
+
+          document.getElementById('level_quran_save_5_1').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_2').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_3').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_4').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_5').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_7').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_8').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_9').selectedIndex = 0;
+      });
+      $(document).on('change', '#level_quran_save_5_7', function (e) {
+          //$('#manhaj-1').html("");
+
+          document.getElementById('class_id').value = 25;
+          document.getElementById('section_id').value = $('#level_quran_save_5_7').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_5_7').val();
+
+          document.getElementById("manhaj-5_1").style.display = "none";
+          document.getElementById("manhaj-5_2").style.display = "none";
+          document.getElementById("manhaj-5_3").style.display = "none";
+          document.getElementById("manhaj-5_4").style.display = "none";
+          document.getElementById("manhaj-5_5").style.display = "none";
+          document.getElementById("manhaj-5_6").style.display = "none";
+          document.getElementById("manhaj-5_7").style.display = "inline";
+          document.getElementById("manhaj-5_8").style.display = "none";
+          document.getElementById("manhaj-5_9").style.display = "none";
+
+          document.getElementById('level_quran_save_5_1').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_2').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_3').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_4').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_5').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_6').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_8').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_9').selectedIndex = 0;
+      });
+      $(document).on('change', '#level_quran_save_5_8', function (e) {
+          //$('#manhaj-1').html("");
+
+          document.getElementById('class_id').value = 25;
+          document.getElementById('section_id').value = $('#level_quran_save_5_8').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_5_8').val();
+
+          document.getElementById("manhaj-5_1").style.display = "none";
+          document.getElementById("manhaj-5_2").style.display = "none";
+          document.getElementById("manhaj-5_3").style.display = "none";
+          document.getElementById("manhaj-5_4").style.display = "none";
+          document.getElementById("manhaj-5_5").style.display = "none";
+          document.getElementById("manhaj-5_6").style.display = "none";
+          document.getElementById("manhaj-5_7").style.display = "none";
+          document.getElementById("manhaj-5_8").style.display = "inline";
+          document.getElementById("manhaj-5_9").style.display = "none";
+
+          document.getElementById('level_quran_save_5_1').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_2').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_3').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_4').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_5').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_6').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_7').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_9').selectedIndex = 0;
+      });
+      $(document).on('change', '#level_quran_save_5_9', function (e) {
+          //$('#manhaj-1').html("");
+
+          document.getElementById('class_id').value = 25;
+          document.getElementById('section_id').value = $('#level_quran_save_5_9').val();
+          document.getElementById('sectionh_id').value = $('#level_quran_save_5_9').val();
+
+          document.getElementById("manhaj-5_1").style.display = "none";
+          document.getElementById("manhaj-5_2").style.display = "none";
+          document.getElementById("manhaj-5_3").style.display = "none";
+          document.getElementById("manhaj-5_4").style.display = "none";
+          document.getElementById("manhaj-5_5").style.display = "none";
+          document.getElementById("manhaj-5_6").style.display = "none";
+          document.getElementById("manhaj-5_7").style.display = "none";
+          document.getElementById("manhaj-5_8").style.display = "none";
+          document.getElementById("manhaj-5_9").style.display = "inline";
+
+          document.getElementById('level_quran_save_5_1').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_2').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_3').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_4').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_5').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_6').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_7').selectedIndex = 0;
+          document.getElementById('level_quran_save_5_8').selectedIndex = 0;
+      });
+
+      
+
+      <!-- Javascript -->
+      $('[data-toggle="tooltip"]').tooltip();
+
+
+      var class_id = $('#class_id').val();
+      var section_id = '0';
+
+      getSectionByClass(class_id, section_id);
+
+      $(document).on('change', '#class_id', function (e) {
+          $('#section_id').html("");
+          var class_id = $(this).val();
+          getSectionByClass(class_id, 0);
+      });
+
+      $('.date2').datepicker({
+          autoclose: true,
+          todayHighlight: true
+      });
+
+      function getSectionByClass(class_id, section_id) {
+
+          if (class_id !== "") {
+              $('#section_id').html("");
+
+              var div_data = '';
+              var url = "";
+
+              $.ajax({
+                  type: "POST",
+                  url: base_url + "welcome/getSections",
+                  data: {'class_id': class_id},
+                  dataType: "json",
+                  beforeSend: function () {
+                      $('#section_id').addClass('dropdownloading');
+                  },
+                  success: function (data) {
+                      $.each(data, function (i, obj)
+                      {
+                          var sel = "";
+                          if (section_id === obj.section_id) {
+                              sel = "selected";
+                          }
+                          div_data += "<option value=" + obj.id + " " + sel + ">" + obj.section + "</option>";
+                      });
+                      $('#section_id').append(div_data);
+                  },
+                  complete: function () {
+                      $('#section_id').removeClass('dropdownloading');
+                  }
+              });
+          }
+      }
+
+
+      /* Validation */
+      $(".roll_no").keypress(function(e) {
+
+          this.value = this.value.toLowerCase();
+          var regex = new RegExp("^[0-9,\b]+$");
+          var key = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+          if (!regex.test(key)) {
+              console.log('stop now')
+              e.preventDefault();
+              return false;
+          }
+      });
+
+      $(".mobileno").keypress(function(e) {
+
+          this.value = this.value.toLowerCase();
+          var regex = new RegExp("^[0-9,\b]+$");
+          var key = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+          if (!regex.test(key)) {
+              console.log('stop now')
+              e.preventDefault();
+              return false;
+          }
+      });
+
+      $(".guardian_phone").keypress(function(e) {
+
+          this.value = this.value.toLowerCase();
+          var regex = new RegExp("^[0-9,\b]+$");
+          var key = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+          if (!regex.test(key)) {
+              console.log('stop now')
+              e.preventDefault();
+              return false;
+          }
+      });
+
+
+
+  });
+  function auto_fill_guardian_address() {
+      if ($("#autofill_current_address").is(':checked'))
+      {
+          $('#current_address').val($('#guardian_address').val());
+      }
+  }
+  function auto_fill_address() {
+      if ($("#autofill_address").is(':checked'))
+      {
+          $('#permanent_address').val($('#current_address').val());
+      }
+  }
+  $('input:radio[name="guardian_is"]').change(
+          function () {
+              if ($(this).is(':checked')) {
+                  var value = $(this).val();
+                  if (value === "father") {
+                      $('#guardian_name').val($('#father_name').val());
+                      $('#guardian_phone').val($('#father_phone').val());
+                      $('#guardian_occupation').val($('#father_occupation').val());
+                      $('#guardian_relation').val("Father");
+                  } else if (value === "mother") {
+                      $('#guardian_name').val($('#mother_name').val());
+                      $('#guardian_phone').val($('#mother_phone').val());
+                      $('#guardian_occupation').val($('#mother_occupation').val());
+                      $('#guardian_relation').val("Mother");
+                  } else {
+                      $('#guardian_name').val("");
+                      $('#guardian_phone').val("");
+                      $('#guardian_occupation').val("");
+                      $('#guardian_relation').val("");
+                  }
+              }
+          });
+
+
+</script>
+<script type="text/javascript">
+
+  function refreshCaptcha(){
+      $.ajax({
+          type: "POST",
+          url: "https://utqsystem.com/site/refreshCaptcha",
+          data: {},
+          success: function(captcha){
+              $("#captcha_image").html(captcha);
+          }
+      });
+  }
+
+  var specialKeys = new Array();
+  specialKeys.push(8,46); //Backspace
+  function IsNumeric(event) {
+      if (!(event.keyCode == 32 || event.keyCode == 46 || event.keyCode == 48 || event.keyCode == 49 || event.keyCode == 50 || event.keyCode == 51 || event.keyCode == 52 || event.keyCode == 53 || event.keyCode == 54 || event.keyCode == 55 || event.keyCode == 56 || event.keyCode == 57))
+      {
+          event.returnValue = false;
+      }
+  }
+</script>    </div>
+
+
+
+
+      
+
+
+       <!--jQuery first, then Popper.js, then Bootstrap JS -->
+      <!-- <script src="/backend/themes/default/js/jquery-3.4.1.min.js"></script> -->
+      <script src="./page2html_files/jquery.min(1).js.تنزيل"></script>
+
+
+
+      <!--Bootstrap Core-->
+      <script src="./page2html_files/propper.min.js.تنزيل"></script>
+      <script src="./page2html_files/bootstrap.min.js.تنزيل"></script>
+
+      <script src="./page2html_files/jquery.bootstrap.js.تنزيل"></script>
+
+      <script src="./page2html_files/material-bootstrap-wizard.js.تنزيل"></script>
+
+      <script src="./page2html_files/jquery.validate.min.js.تنزيل"></script>
+
+      <!--to view items on reach-->
+      <script src="./page2html_files/jquery.appear.js.تنزيل"></script>
+      <!--Owl Slider-->
+      <script src="./page2html_files/owl.carousel.min.js.تنزيل"></script>
+      <!--number counters-->
+      <script src="./page2html_files/jquery-countTo.js.تنزيل"></script>
+      <!--Parallax Background-->
+      <script src="./page2html_files/parallaxie.js.تنزيل"></script>
+      <!--Cubefolio Gallery-->
+      <script src="./page2html_files/jquery.cubeportfolio.min.js.تنزيل"></script>
+      <!--Fancybox js-->
+      <script src="./page2html_files/jquery.fancybox.min.js.تنزيل"></script>
+      <!--tooltip js-->
+      <script src="./page2html_files/tooltipster.min.js.تنزيل"></script>
+      <!--wow js-->
+      <script src="./page2html_files/wow.js.تنزيل"></script>
+
+
+      
+
+      <!--Revolution SLider-->
+      <script src="./page2html_files/jquery.themepunch.tools.min.js.تنزيل"></script>
+      <script src="./page2html_files/jquery.themepunch.revolution.min.js.تنزيل"></script>
+       <!--SLIDER REVOLUTION 5.0 EXTENSIONS -->
+      <script src="./page2html_files/revolution.extension.actions.min.js.تنزيل"></script>
+      <script src="./page2html_files/revolution.extension.carousel.min.js.تنزيل"></script>
+      <script src="./page2html_files/revolution.extension.kenburn.min.js.تنزيل"></script>
+      <script src="./page2html_files/revolution.extension.layeranimation.min.js.تنزيل"></script>
+      <script src="./page2html_files/revolution.extension.migration.min.js.تنزيل"></script>
+      <script src="./page2html_files/revolution.extension.navigation.min.js.تنزيل"></script>
+      <script src="./page2html_files/revolution.extension.parallax.min.js.تنزيل"></script>
+      <script src="./page2html_files/revolution.extension.slideanims.min.js.تنزيل"></script>
+      <script src="./page2html_files/revolution.extension.video.min.js.تنزيل"></script>
+      
+      <!--custom functions and script-->
+      <script src="./page2html_files/functions.js.تنزيل"></script>
+      <script src="./page2html_files/wow.min.js.تنزيل" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+               <!--Include Date Range Picker -->
+              
+               <script src="./page2html_files/moment.min.js.تنزيل"></script>
+       <script src="./page2html_files/bootstrap-datetimepicker.js.تنزيل"></script>
+       
+      <script type="text/javascript" src="./page2html_files/bootstrap-datepicker.min.js.تنزيل"></script>
+       <script src="./page2html_files/bootstrap-hijri-datetimepickermin.js.تنزيل"></script>
+      
+     <script>
+
+$(document).ready(function () {
+
+          new WOW().init();
+
+          $(function () {
+
+              initDefault();
+
+              });
+
+          function initDefault() {
+
+              $(".datehijri").hijriDatePicker({
+                  showTodayButton: true,
+                  hijri:true,
+                  locale: 'en-us',
+                  language: 'ar-sa',
+                  format: "YYYY-MM-DD",
+                  hijriFormat:'iYYYY-iM-iD',
+                  //format: "iYYYY-iM-iD",
+
+                  showTodayButton: false,
+                  useCurrent: true,
+                  
+
+
+              });
+
+              
+
+              $(".datehijri").on('dp.change', function (arg) {
+
+                  if (!arg.date) {
+                      $("#selected-date").html('');
+                      return;
+                  };
+
+                  let date = arg.date;
+
+                  document.getElementById('selected-date').style.color = '#b1a8a8';
+                  document.getElementById('selected-date').style.display = 'block';
+                  $("#selected-date-m").html(date.format("YYYY-M-D"));
+                  $("#selected-date-h").html(date.format("iD-iM-iYYYY"));
+              });
+           }
+          });
+      </script>
+
+  
+
+
+<a href="https://utqsystem.com/online_admission#" class="back-top"><i class="fa fa-angle-up"></i></a></body></html>
+</html>
